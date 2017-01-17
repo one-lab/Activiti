@@ -32,10 +32,10 @@
 	    <groupId>org.apache.tomcat.maven</groupId>
         <artifactId>tomcat7-maven-plugin</artifactId>
 		<configuration>
-		  <port>8080</port>
+		  <port>8181</port>
 		  <path>/activiti-rest</path>
 		  <systemProperties>
-		    <com.sun.management.jmxremote.port>4000</com.sun.management.jmxremote.port>
+		    <com.sun.management.jmxremote.port>4001</com.sun.management.jmxremote.port>
           </systemProperties>
 		</configuration>
       </plugin>
@@ -108,6 +108,11 @@
   </profiles>
   
   <dependencies>
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <scope>compile</scope>
+    </dependency>
     <dependency>
       <groupId>org.activiti</groupId>
       <artifactId>activiti-engine</artifactId>
