@@ -15,6 +15,7 @@ package org.activiti.explorer.conf;
 
 import java.io.InputStream;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -103,15 +104,16 @@ public class DemoDataConfiguration {
   }
   
   protected void initDemoGroups() {
-    String[] assignmentGroups = new String[] {"management", "sales", "marketing", "engineering"};
-    for (String groupId : assignmentGroups) {
-      createGroup(groupId, "assignment");
-    }
-    
-    String[] securityGroups = new String[] {"user", "admin"}; 
-    for (String groupId : securityGroups) {
-      createGroup(groupId, "security-role");
-    }
+//    String[] assignmentGroups = new String[] {"management", "sales", "marketing", "engineering"};
+//    for (String groupId : assignmentGroups) {
+//      createGroup(groupId, "assignment");
+//    }
+//
+//    String[] securityGroups = new String[] {"user", "admin"};
+//    for (String groupId : securityGroups) {
+//      createGroup(groupId, "security-role");
+//    }
+    createGroup("admin", "security-role");
   }
   
   protected void createGroup(String groupId, String type) {
@@ -124,20 +126,23 @@ public class DemoDataConfiguration {
   }
 
   protected void initDemoUsers() {
-    createUser("kermit", "Kermit", "The Frog", "kermit", "kermit@activiti.org", 
-            "org/activiti/explorer/images/kermit.jpg",
-            Arrays.asList("management", "sales", "marketing", "engineering", "user", "admin"),
-            Arrays.asList("birthDate", "10-10-1955", "jobTitle", "Muppet", "location", "Hollywoord",
-                          "phone", "+123456789", "twitterName", "alfresco", "skype", "activiti_kermit_frog"));
-    
-    createUser("gonzo", "Gonzo", "The Great", "gonzo", "gonzo@activiti.org", 
-            "org/activiti/explorer/images/gonzo.jpg",
-            Arrays.asList("management", "sales", "marketing", "user"),
-            null);
-    createUser("fozzie", "Fozzie", "Bear", "fozzie", "fozzie@activiti.org", 
-            "org/activiti/explorer/images/fozzie.jpg",
-            Arrays.asList("marketing", "engineering", "user"),
-            null);
+//    createUser("kermit", "Kermit", "The Frog", "kermit", "kermit@activiti.org",
+//            "org/activiti/explorer/images/kermit.jpg",
+//            Arrays.asList("management", "sales", "marketing", "engineering", "user", "admin"),
+//            Arrays.asList("birthDate", "10-10-1955", "jobTitle", "Muppet", "location", "Hollywoord",
+//                          "phone", "+123456789", "twitterName", "alfresco", "skype", "activiti_kermit_frog"));
+//
+//    createUser("gonzo", "Gonzo", "The Great", "gonzo", "gonzo@activiti.org",
+//            "org/activiti/explorer/images/gonzo.jpg",
+//            Arrays.asList("management", "sales", "marketing", "user"),
+//            null);
+//    createUser("fozzie", "Fozzie", "Bear", "fozzie", "fozzie@activiti.org",
+//            "org/activiti/explorer/images/fozzie.jpg",
+//            Arrays.asList("marketing", "engineering", "user"),
+//            null);
+    createUser("admin", "admin", "", "admin", "hanchunliang@tftiancai.com",
+               "org/activiti/explorer/images/kermit.jpg",
+               Arrays.asList("admin"), Collections.EMPTY_LIST);
   }
   
   protected void createUser(String userId, String firstName, String lastName, String password, 
